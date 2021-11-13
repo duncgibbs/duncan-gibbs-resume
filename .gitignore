@@ -1,0 +1,11 @@
+*.log
+*.aux
+*.4tc
+*.4ct
+*.idv
+*.lg
+*.out
+*.tmp
+*.xdv
+*.xref
+

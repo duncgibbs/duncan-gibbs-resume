@@ -1,0 +1,251 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Duncan Gibbs
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+% only for pdflatex
+% \input{glyphtounicode}
+% \pdfgentounicode=1
+
+% fontawesome
+\usepackage{fontawesome5}
+
+% fixed width
+\usepackage[scale=0.90,lf]{FiraMono}
+
+\usepackage{pagecolor,lipsum}
+\definecolor{background-color}{HTML}{3B3F45}
+
+% light-grey
+\definecolor{light-grey}{gray}{0.17}
+\definecolor{dark-grey}{gray}{0.7}
+\definecolor{text-grey}{gray}{0.92}
+
+% custom underilne
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+\newcommand*{\fontdir}[1][fonts/]{\def\@fontdir{#1}}
+\fontdir
+
+\usepackage{fontspec}
+\setmainfont[
+    Path=\@fontdir,
+    UprightFont=*-400-Book,
+    ItalicFont=*-400-BookItalic,
+    BoldFont=*-700-Bold,
+    BoldItalicFont=*-700-BoldItalic
+]{Jost}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{0in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% sans serif sections
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{white} {\titlerule[2pt]} \vspace{-4pt}]
+
+%---COMMANDS---
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubHeading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeSubSubHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeEducation}[3]{
+    \begin{tabularx}{0.8\textwidth}{X X X}
+        \textbf{#1} & \textit{#2} & \textit{#3}
+    \end{tabularx}
+    \vspace{-4pt}
+}
+
+\newcommand{\resumeReferences}[3]{
+    \begin{center}
+        \setlength\tabcolsep{20pt}
+        \begin{tabular}{l c r}
+            #1 & #2 & #3
+        \end{tabular}
+    \end{center}
+}
+
+\newcommand{\reference}[3]{
+    \begin{tabular}{c}
+        \textbf{#1} \\
+        \textit{\color{dark-grey}#2} \\
+        \texttt{#3}
+    \end{tabular}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%---RESUME---
+
+\begin{document}
+\pagecolor{background-color}
+
+%---HEADING---
+\begin{flushleft}
+    \textbf{\Huge DUNCAN GIBBS} \\ \vspace{7pt}
+    \small \faLink \hspace{1pt} \texttt{duncangibbs.com} \hspace{1pt} $|$
+    \hspace{1pt} \faEnvelope \hspace{1pt} \texttt{duncgibbs@gmail.com} \hspace{1pt} $|$ 
+    \hspace{1pt} \faPhone \hspace{1pt} \texttt{913.314.1021}
+    \\ \vspace{-1pt}
+\end{flushleft}
+
+%---EXPERIENCE---
+\section{EXPERIENCE}
+    \resumeSubHeadingListStart
+
+        \resumeSubHeading
+            {Tailwind}{July 2019 -- September 2021}
+            {Platform Engineer}{Oklahoma City, OK}
+            \resumeItemListStart
+                \resumeItem{Designed and implemented new fullstack features and upgrades on both modern React and legacy PHP apps.}
+                \resumeItem{Migrated existing pieces of our application to and created novel serverless AWS microservices using CloudFormation.}
+                \resumeItem{Built internal tools for our Engineering and Operations teams using AWS, TypeScript, and React/Next.}
+                \resumeItem{Interviewed new engineering candidates as well as made improvements to our hiring process.}
+            \resumeItemListEnd
+
+        \resumeSubHeading
+            {Torch.AI}{July 2018 -- July 2019}
+            {Technical Architect}{Leawood, KS / Washington, DC}
+            \resumeItemListStart
+                \resumeItem{Managed an external, cross-organizational Agile team for a DoD NBIS program, including presenting to, and working with stakeholders in DC and KC.}
+                \resumeItem{Created and pitched technical solutions to clients, working closely and traveling with different Project Managers.}
+                \resumeItem{Interviewed, hired, and onboarded new software engineers for different projects.}
+            \resumeItemListEnd
+
+        \resumeSubHeading
+            {Torch.AI}{April 2017 -- July 2018}
+            {Senior Software Engineer}{Leawood, KS}
+            \resumeItemListStart
+                \resumeItem{Developed a physics based node graph using three.js and D3.js for visualizing and analyzing networks and supply chains.}
+                \resumeItem{Created a queue-worker, a realtime notification service, a file parser, and other microservices for various projects.}
+                \resumeItem{Generated and improved external REST and SOAP API connections.}
+            \resumeItemListEnd
+
+        \resumeSubHeading
+            {Red Nova Labs}{March 2016 -- April 2017}
+            {Software Engineer}{Westwood, KS}
+            \resumeItemListStart
+                \resumeItem{Designed and developed new features, fixed bugs, and optimized code in a multi-tier, multi-language web application.}
+                \resumeItem{Directed the effort, in conjunction with Operations, to communicate with clients to find and fix bugs in our software.}
+                \resumeItem{Onboarded new developers and maintained a wiki of guides.}
+                \resumeItem{Excelled in annual, internal, self-driven hackathons.}
+            \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%---SKILLS---
+\section{SKILLS}
+    \begin{itemize}[leftmargin=0in, label={}]
+        {
+            \item{
+                \textbf{Languages} {: Node, JavaScript, TypeScript, Rust, PHP, Python, C\#, Bash, Java, Ruby, Haskell}\vspace{4pt} \\
+                \textbf{Web} {: HTML(5), CSS(3), Sass, Less, React, Next.js, Chakra UI, Material UI, Ant Design, Laravel, Django, Express, Wordpress, Rails}\vspace{4pt} \\
+                \textbf{Databases} {: PostgreSQL, MySQL, DynamoDB, MongoDB, ArangoDB, Aurora}\vspace{4pt} \\
+                \textbf{Tools} {: Unix, Git, AWS, Jupyter, Docker, Kubernetes, Photoshop, Lightroom, MS Office}
+            }
+        }
+    \end{itemize}
+
+%---EDUCATION---
+\section{EDUCATION}
+    \resumeEducation
+        {Hendrix College}
+        {Computer Science}
+        {Conway, AR}
+
+%---REFERENCES---
+\section{REFERENCES}
+    \resumeReferences
+        {
+            \reference
+                {Andres Barbaro}
+                {Tailwind}
+                {405.694.3438}
+        }
+        {
+            \reference
+                {Will Washburn}
+                {Tailwind}
+                {508.558.1931}
+        }
+        {
+            \reference
+                {Jon Kramer}
+                {Torch.AI}
+                {913.526.4745}
+        }
+
+%-------------------------------------------
+\end{document}
